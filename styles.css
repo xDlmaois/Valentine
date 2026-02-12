@@ -1,0 +1,183 @@
+/* General body styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #FFFACD;
+    font-family: Tahoma, sans-serif;
+}
+
+/* Main container */
+.container {
+    background: #FFEB3B;
+    border-radius: 24px;
+    position: relative;
+    box-shadow: 0 8px 32px 0 rgba(255, 193, 7, 0.25);
+    padding: 40px 32px 32px 32px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #E65100;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Button container */
+.buttons {
+    margin-top: 24px;
+}
+
+/* Yes button styles */
+#yesButton {
+    padding: 12px 28px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: #FFD700;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+    transition: font-size 0.3s cubic-bezier(.4,0,.2,1),
+                left 0.4s cubic-bezier(.4,0,.2,1),
+                top 0.4s cubic-bezier(.4,0,.2,1),
+                background 0.2s;
+    outline: none;
+}
+#yesButton:hover {
+    background: #FFC107;
+    color: #333;
+}
+#yesButton:focus, #yesButton:active {
+    outline: none;
+    background: #FFD700;
+}
+
+/* No button styles */
+#noButton {
+    padding: 12px 28px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: #FFD700;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+    transition: font-size 0.3s cubic-bezier(.4,0,.2,1),
+                left 0.4s cubic-bezier(.4,0,.2,1),
+                top 0.4s cubic-bezier(.4,0,.2,1),
+                background 0.2s;
+    position: relative;
+    outline: none;
+}
+#noButton:hover {
+    background: #FFC107;
+    color: #333;
+}
+#noButton:focus, #noButton:active {
+    outline: none;
+    background: #FFD700;
+}
+
+/* Hidden utility class */
+.hidden {
+    display: none;
+}
+
+/* GIF container styles */
+.gif-container img {
+    margin-top: 24px;
+    width: 320px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px 0 rgba(255, 193, 7, 0.2);
+}
+
+/* Image container styles for thank you page */
+.image-container img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px 0 rgba(255, 193, 7, 0.2);
+    object-fit: contain;
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD700;
+    color: #333;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px 0 rgba(255, 193, 7, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    z-index: 1000;
+    animation: slideUp 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.notification-icon {
+    font-size: 20px;
+}
+
+.notification-text {
+    flex: 1;
+}
+
+.notification-close {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.notification-close:hover {
+    transform: scale(1.2);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+.notification.hiding {
+    animation: slideDown 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* Disabled button styling to indicate action taken */
+#yesButton:disabled, #noButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
